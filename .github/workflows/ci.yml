@@ -3,10 +3,10 @@ name: Continuous integration
 on:
   push:
     branches: 
-    - main
+    - master
   pull_request:
     branches:
-    - main 
+    - master 
   
 jobs:
   frontend-test: 
@@ -109,7 +109,7 @@ jobs:
       packages: write
       contents: read
     needs: [integration-test]
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
     
     steps:
     - uses: actions/checkout@v3
